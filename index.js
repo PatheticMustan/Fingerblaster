@@ -61,10 +61,7 @@ function showRandomSign() {
 
 function updateTimer() {
     timerValue = (60000 - (Date.now() - startTime)) / 1000;
-    // Prevent floating point errors
-    if (timerValue <= 0) {
-        timerValue = 0;
-    }
+    timerValue = Math.max(timerValue, 0);
     timer.textContent = `${timerValue.toFixed(2)}s`;
 
     if (timerValue <= 0) {
@@ -79,7 +76,7 @@ function endGame() {
     timer.textContent = "Game Over";
 
     setTimeout(() => {
-        const playAgain = confirm("Game Over! Score: " + scoreValue + "\nPlay again?");
+        const playAgain = confirm(`Game Over! Score: ${scoreValue} \nPlay again?`);
         if (playAgain) {
             resetGame();
         }
@@ -88,7 +85,6 @@ function endGame() {
 
 function flashCard(type) {
     gameCard.classList.remove("correct", "incorrect");
-    void gameCard.offsetWidth;
     gameCard.classList.add(type);
     setTimeout(() => {
         gameCard.classList.remove(type);
