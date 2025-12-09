@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Fingerblaster</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <h1>Fingerblaster</h1>
+    <p>Identify as many letters as you can in 60 seconds!</p>
+
+    <div id="game">
+        <div id="timer">60.00s</div>
+        <img id="sign" src="./letters/A.jpg" style="width: 250px">
+
+        <div id="score">Score: 0</div>
+    </div>
+    <input type="text" id="input" placeholder="Type to start the timer">
+
+    <div class="controls">
+        <button id="instructions" class="yellow">Instructions</button>
+        <button id="credits" class="grey">Credits</button>
+    </div>
+
+    <dialog id="credits-modal">
+        <form method="dialog">
+            <button class="close-btn">&times;</button>
+        </form>
+        <h2>Credits</h2>
+        <p>Made by Nat Wang</p>
+        <p>ASL Image Dataset from
+            <a href="https://www.kaggle.com/datasets/shreyagodhani645/asl-hand-alphabet-dataset">Shreya Godhani</a>
+        </p>
+        <p>ASL Alphabet from <a href="https://www.vecteezy.com/members/tetianabihus2171285">Tetiana Bihus</a></p>
+    </dialog>
+
+    <dialog id="instructions-modal">
+        <form method="dialog">
+            <button class="close-btn">&times;</button>
+        </form>
+        <h2>Instructions</h2>
+        <p>Identify as many letters as you can in 60 seconds!</p>
+        <img src="./letters/alphabet.jpg" alt="Alphabet" style="width: 100%" />
+    </dialog>
+</body>
+
+</html>
