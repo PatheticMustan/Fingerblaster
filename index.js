@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize game in ready state
     resetGame();
+    preloadImages();
 });
 
 const sign = document.getElementById("sign");
@@ -25,6 +26,15 @@ let startTime;
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 // Store current letter to check against
 let currentLetter = "";
+
+function preloadImages() {
+    const images = [];
+    for (let i=0; i<letters.length; i++) {
+        images[i] = new Image();
+        images[i].src = `./images/${letters[i]}.jpg`;
+    }
+}
+
 
 function resetGame() {
     clearInterval(timerInterval);
